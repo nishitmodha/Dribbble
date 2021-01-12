@@ -1,5 +1,4 @@
-
-document.addEventListener(function() {
+document.addEventListener("turbolinks:load", function() {
 
 	var Shots = {
 		previewShot() {
@@ -91,12 +90,9 @@ document.addEventListener(function() {
 					}, false);
 				}
 			}
-		},
-
-
+		}
 	};
 	Shots.previewShot();
-	
 
 
 });

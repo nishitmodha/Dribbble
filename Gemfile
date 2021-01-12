@@ -30,8 +30,6 @@ gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'acts_as_votable', '~> 0.13.1'
 gem 'impressionist', '~> 2.0'
 gem 'devise', '~> 4.7', '>= 4.7.3'
-gem 'carrierwave', '~> 2.1'
-gem 'mini_magick', '~> 4.11'
 gem 'jquery-rails', '~> 4.4'
 gem 'gravatar_image_tag', '~> 1.2'
 
