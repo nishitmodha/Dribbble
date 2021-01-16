@@ -18,7 +18,7 @@
 			<div class="column is-8">
 				<div class="shot-container">
 					<div class="shot-full">
-            <%= image_tag @shot.user_shot.variant(resize_to_fit: [800, 400]) unless @shot.user_shot.blank? %>
+						<%= image_tag @shot.user_shot %>
 					</div>
 
 					<% if user_signed_in? && (current_user.id == @shot.user_id) %>		
@@ -52,11 +52,33 @@
 				<div class="nav panel show-shot-analytics">
 					<div class="panel-block views data">
 						<span class="icon"><i class="fa fa-eye"></i></span>
-						<%= 2 %>
+						<%= pluralize(@shot.impressionist_count, 'View') %>
 					</div>
 					<div class="panel-block comments data">
 						<span class="icon"><i class="fa fa-comment"></i></span>
 							<%= pluralize(@shot.comments.count, 'Comment') %>
+					</div>
+					<div class="panel-block like data">
+						<% if user_signed_in? %>
+
+						<% if current_user.liked? @shot %>
+							<%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
+							<span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+							<span class="vote_count"><%= pluralize(@shot.get_likes.size, 'Like') %></span>
+							<% end %>
+						<% else %>
+							<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
+							<span class="icon"><i class="fa fa-heart"></i></span>
+							<span class="vote_count"><%= pluralize(@shot.get_likes.size, 'Like') %></span>
+							<% end %>
+						<% end %>
+
+						<% else %>
+							<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
+							<span class="icon"><i class="fa fa-heart"></i></span>
+							<span class="vote_count"><%= pluralize(@shot.get_likes.size, 'Like') %></span>
+							<% end %>
+						<% end %>
 					</div>
 		</div>
 	</div>

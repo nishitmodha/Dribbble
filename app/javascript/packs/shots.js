@@ -93,6 +93,7 @@ document.addEventListener("turbolinks:load", function() {
 		}
 	};
 	Shots.previewShot();
+	
 
 
 });
