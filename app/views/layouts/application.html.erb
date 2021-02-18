@@ -3,13 +3,16 @@
   <head>
     <title>Dribbble</title>
     <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'navbar', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'shots', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
